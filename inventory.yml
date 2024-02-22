@@ -1,0 +1,29 @@
+---
+all:
+  children:
+    raspberrypi:
+      hosts: 
+        raspberrypi.lan:
+          ansible_user: pi
+          dnscrypt_on_pihole: true
+          dnscrypt_sysd_socket_only: false
+          dnscrypt_disabled_server_names:
+            - 'mullvad-doh'
+            - 'cz.nic'
+            - 'doh-ibksturm'
+            - 'plan9-ns2-doh'
+            - 'circl-doh'
+            - 'indonesia-unfilter-doh'
+          log2ram:
+            # Size the log folder will reserve into the RAM
+            size: 128M
+            # When `true` use rsync for log syncing, when `false` use cp
+            rsync: false 
+            # Use system mail to get notified on errors
+            mail: false
+            # List of folders to put in RAM
+            path: ["/var/log"]
+            # When `true` use zram, when `false` use tmpfs
+            zram: false
+            # Compression algorithm when zram is enabled
+            compression: lz4

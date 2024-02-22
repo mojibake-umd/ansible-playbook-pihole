@@ -1,0 +1,8 @@
+---
+roles:
+  - name: mojibake-umd.dnscrypt
+    src: git+https://github.com/mojibake-umd/ansible-role-dnscrypt.git
+    version: master
+    scm: git
+  - name: drew1kun.pihole
+

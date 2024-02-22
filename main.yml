@@ -1,0 +1,11 @@
+---
+- name: Pi-hole setup
+  hosts: raspberrypi
+  gather_facts: true
+  roles:
+    - drew1kun.pihole
+    - mojibake-umd.dnscrypt
+    - alysoid.log2ram
+# Note to self
+# Running in check mode leads to false errors
+# and tail chasing. Just do it.
